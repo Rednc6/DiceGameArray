@@ -12,6 +12,7 @@ namespace DiceGameArray
         //private Die die2;
         //private Die die3;
         Die[] numberOfDice;
+    
 
         public DiceCup()
         {
@@ -21,7 +22,7 @@ namespace DiceGameArray
             //die1 = new Die(10);
             //die2 = new Die(4);
             //die3 = new Die(20);
-            numberOfDice = new Die[4];
+            numberOfDice = new Die[5];
             numberOfDice[0] = new Die(6);
             numberOfDice[1] = new Die(6);
             numberOfDice[2] = new Die(10);
@@ -58,7 +59,18 @@ namespace DiceGameArray
         /// <returns></returns>
          public int GetTotalValue()
         {
+            return numberOfDice[0].GetValue() + numberOfDice[1].GetValue() + numberOfDice[2].GetValue() +
+                numberOfDice[3].GetValue() + numberOfDice[4].GetValue();
             //return die1.GetValue() + die2.GetValue() + die3.GetValue();
+        }
+        
+        public void ShowValues()
+        {
+
+            Console.WriteLine("Dice 1 = {0}, Dice 2 = {1}, Dice 3 = {2}, Dice 4 = {3}, Dice 5 = {4}", numberOfDice[0].GetValue(), 
+                numberOfDice[1].GetValue(), numberOfDice[2].GetValue(), numberOfDice[3].GetValue(), numberOfDice[4].GetValue());       
+
+
         }
 
         // You must create a method with the below header:

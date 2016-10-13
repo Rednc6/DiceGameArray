@@ -14,6 +14,7 @@ namespace DiceGameArray
             DiceCup diceCup = new DiceCup();
             diceCup.RollAllDiceInCup();
             Console.WriteLine($"Samlet værdi {diceCup.GetTotalValue()}");
+            diceCup.ShowValues();
 
             int value1 = 10;
             bool resultat = diceCup.IsTotalValueLargerThan(value1);
