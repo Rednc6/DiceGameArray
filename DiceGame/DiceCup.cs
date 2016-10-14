@@ -41,11 +41,16 @@ namespace DiceGameArray
         /// </summary>
         public void RollAllDiceInCup()
         {
-            numberOfDice[0].RollDie();
-            numberOfDice[1].RollDie();
-            numberOfDice[2].RollDie();
-            numberOfDice[3].RollDie();
-            numberOfDice[4].RollDie(); 
+            foreach (Die Rolling in numberOfDice)
+            {
+                Rolling.RollDie();
+            }
+            //}
+            //numberOfDice[0].RollDie();
+            //numberOfDice[1].RollDie();
+            //numberOfDice[2].RollDie();
+            //numberOfDice[3].RollDie();
+            //numberOfDice[4].RollDie(); 
             //die1.RollDie();
             //die2.RollDie();
             //die3.RollDie();
@@ -59,6 +64,10 @@ namespace DiceGameArray
         /// <returns></returns>
          public int GetTotalValue()
         {
+            //foreach (Die number in numberOfDice)
+            //{
+            //   number.GetValue();
+            //}
             return numberOfDice[0].GetValue() + numberOfDice[1].GetValue() + numberOfDice[2].GetValue() +
                 numberOfDice[3].GetValue() + numberOfDice[4].GetValue();
             //return die1.GetValue() + die2.GetValue() + die3.GetValue();
@@ -66,9 +75,14 @@ namespace DiceGameArray
         
         public void ShowValues()
         {
-
-            Console.WriteLine("Dice 1 = {0}, Dice 2 = {1}, Dice 3 = {2}, Dice 4 = {3}, Dice 5 = {4}", numberOfDice[0].GetValue(), 
-                numberOfDice[1].GetValue(), numberOfDice[2].GetValue(), numberOfDice[3].GetValue(), numberOfDice[4].GetValue());       
+            
+            foreach (Die number in numberOfDice)
+            {
+                
+                Console.WriteLine("Result: " + number.GetValue() + "Dice {0}"); // fix counter
+            }
+            //Console.WriteLine("Dice 1 = {0}, Dice 2 = {1}, Dice 3 = {2}, Dice 4 = {3}, Dice 5 = {4}", numberOfDice[0].GetValue(), 
+            //    numberOfDice[1].GetValue(), numberOfDice[2].GetValue(), numberOfDice[3].GetValue(), numberOfDice[4].GetValue());       
 
 
         }
